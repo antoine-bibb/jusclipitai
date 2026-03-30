@@ -1,0 +1,2 @@
+-- Initial schema managed in SQLAlchemy models for MVP.
+-- Use Alembic autogenerate against server/app/models/models.py in production.

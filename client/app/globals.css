@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { background:#09090b; color:#fafafa; }
+.card { @apply rounded-xl border border-zinc-800 bg-zinc-900 p-4; }
