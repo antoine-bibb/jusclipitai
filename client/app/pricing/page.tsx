@@ -1,8 +1,48 @@
+const plans = [
+  {
+    name: 'Starter',
+    price: '$0',
+    detail: 'For experimenting with automated clipping.',
+    features: ['3 uploads / month', '30 clip exports', 'Basic captions', '720p render'],
+  },
+  {
+    name: 'Pro',
+    price: '$29',
+    detail: 'For creators and small teams publishing daily.',
+    features: ['30 uploads / month', '150 clip exports', 'Brand templates', '1080p render', 'Priority queue'],
+  },
+  {
+    name: 'Scale',
+    price: '$99',
+    detail: 'For media teams with heavy publishing cadence.',
+    features: ['200 uploads / month', '1000 clip exports', 'Team seats', 'Webhook automations', 'Usage analytics'],
+  },
+];
+
 export default function PricingPage() {
-  const plans = [
-    { name: 'Free', price: '$0', detail: '5 uploads / 20 clips' },
-    { name: 'Pro', price: '$29', detail: '30 uploads / 150 clips' },
-    { name: 'Business', price: '$99', detail: '200 uploads / 1000 clips' },
-  ];
-  return <div className="grid md:grid-cols-3 gap-4">{plans.map((p) => <div key={p.name} className="card"><h2>{p.name}</h2><p>{p.price}/mo</p><p>{p.detail}</p></div>)}</div>;
+  return (
+    <div className="space-y-8">
+      <header className="space-y-3 text-center">
+        <span className="badge">Simple pricing</span>
+        <h1 className="section-title">Plans for every short-form workflow</h1>
+        <p className="mx-auto max-w-2xl text-zinc-300">Start free, then upgrade as your upload volume and export needs increase.</p>
+      </header>
+
+      <section className="grid gap-4 md:grid-cols-3">
+        {plans.map((plan) => (
+          <article key={plan.name} className="card flex flex-col">
+            <h2 className="text-2xl font-black text-white">{plan.name}</h2>
+            <p className="mt-2 text-4xl font-black text-white">{plan.price}<span className="text-base font-medium text-zinc-400">/mo</span></p>
+            <p className="mt-2 text-zinc-300">{plan.detail}</p>
+            <ul className="mt-5 space-y-2 text-sm text-zinc-200">
+              {plan.features.map((feature) => (
+                <li key={feature}>• {feature}</li>
+              ))}
+            </ul>
+            <button className="mt-6 rounded-xl bg-indigo-500 px-4 py-2 font-semibold text-white hover:bg-indigo-400">Choose {plan.name}</button>
+          </article>
+        ))}
+      </section>
+    </div>
+  );
 }
