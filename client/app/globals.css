@@ -2,5 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-body { background:#09090b; color:#fafafa; }
-.card { @apply rounded-xl border border-zinc-800 bg-zinc-900 p-4; }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background:
+    radial-gradient(circle at top right, rgba(99, 102, 241, 0.25), transparent 45%),
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.12), transparent 35%),
+    #09090b;
+  color: #f4f4f5;
+}
+
+.card {
+  @apply rounded-2xl border border-zinc-800 bg-zinc-900/80 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.02)];
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full border border-indigo-400/30 bg-indigo-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-indigo-200;
+}
+
+.section-title {
+  @apply text-3xl font-black tracking-tight text-white sm:text-4xl;
+}
